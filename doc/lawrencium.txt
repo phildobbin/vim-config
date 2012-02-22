@@ -1,0 +1,144 @@
+*lawrencium.txt*  Mercurial wrapper for VIM
+
+
+                LAWRENCIUM REFERENCE MANUAL
+                    by Ludovic Chabant
+
+
+                                                *lawrencium*
+
+1.  Introduction            |lawrencium-intro|
+2.  Commands                |lawrencium-commands|
+3.  Status Window           |lawrencium-status-window|
+
+
+=============================================================================
+1.  Introduction                                *lawrencium-intro*
+
+When a file from a Mercurial repository is open in a buffer, that buffer gets
+new commands defined.
+
+This plugin is only available if 'compatible' is not set.
+
+Grab the latest version or report a bug on BitBucket:
+
+http://bitbucket.org/ludovicchabant/vim-lawrencium
+
+
+
+=============================================================================
+2.  Commands                                    *lawrencium-commands*
+
+All commands defined by |lawrencium| are local to each buffer.
+
+                                                *:Hg*
+:Hg {args}              Run an arbitrary Mercurial command. Similar to :!hg
+                        [args] but the '--repository' is automatically
+                        specified with the root of the repository the current
+                        file belongs to, and it will auto-complete any
+                        standard command or option.
+
+                                                *:Hg!*
+:Hg! {args}             Like |:Hg|, but the output of the command is placed in
+                        a temp file and edited in the |preview-window|.
+
+                                                *:Hgcd*
+:Hgcd[!] {path}         |:cd| relative to the root of the repository.
+
+                                                *:Hglcd*
+:Hglcd[!] {path}        |:lcd| relative to the root of the repository.
+
+                                                *:Hgedit*
+:Hgedit {file}          |:edit| {file} relative to the root of the repository.
+
+                                                *:Hgedit!*
+:Hgedit! {file}         |:edit!| {file} relative to the root of the repository.
+
+                                                *:Hgstatus*
+:Hgstatus               Shows the output of 'hg status' in the
+                        |preview-window|. Some extra-commands, along with some
+                        default mappins, are available in this window. See
+                        |lawrencium-status-window|.
+
+                                                *:Hgdiff*
+:Hgdiff                 Diffs the current file against its parent revision.
+
+                                                *:Hgdiff_f*
+:Hgdiff {revspec}       Diffs the current file against the specified revision.
+
+                                                *:Hgvdiff*
+:Hgvdiff                Same as |:Hgdiff| but uses a vertical split.
+
+                                                *:Hgvdiff_f*
+:Hgvdiff {revspec}      Same as |:Hgdiff_f| but uses a vertical split.
+
+                                                *:Hgcommit*
+:Hgcommit               Opens a new window to edit a commit message into a
+                        temporary file and, upon quitting the buffer, if that
+                        file has been written to, commit the current changes
+                        to the repository.
+
+                                                *:Hgvcommit*
+:Hgvcommit              Same as |:Hgcommit| but uses a vertical split to edit
+                        the commit message.
+
+
+
+=============================================================================
+3.  Status Window                               *lawrencium-status-window*
+
+The `hg status` window opened by Lawrencium has a few special commands 
+defined in it. Also, unless the global `lawrencium_define_mappings` is set to
+`0`, some commands are mapped to keyboard shortcuts, as detailed in the
+following descriptions.
+
+
+                                                *:Hgstatusedit*
+:Hgstatusedit           Open the file mentioned on the current line.
+                        Mapped to <cr>.
+
+                                                *:Hgstatusaddremove*
+:Hgstatusaddremove      Run `hg addremove` on the file mentioned on the
+                        current line, or on the lines currently selected in
+                        visual selection mode (see |visual-start|).
+                        Mapped to <C-A>.
+
+                                                *:Hgstatusdiff*
+:Hgstatusdiff           Open a diff window on the file mentioned on the
+                        current line, between the working directory version
+                        and the parent revision version. Similar to running
+                        |:Hgdiff| on that file.
+                        Mapped to <C-D>.
+
+                                                *:Hgstatusvdiff*
+:Hgstatusvdiff          Similar to |:Hgstatusdiff|, but use a vertical split.
+                        Similar to running |:Hgvdiff| on that file.
+                        Mapped to <C-V>.
+
+                                                *:Hgstatuscommit*
+:Hgstatuscommit         Runs |:Hgcommit| on the files currently mentioned in
+                        the buffer, or in the current selection. The first 
+                        option means you can delete lines from the buffer
+                        until the remaining filenames are those you want to
+                        commit.
+                        Mapped to <C-S>.
+
+                                                *:Hgstatusvcommit*
+:Hgstatusvcommit        Similar to |:Hgstatuscommit|, but use a vertical
+                        split, as with |:Hgvcommit|.
+                        Not mapped byd default.
+
+                                                *:Hgstatusrefresh*
+:Hgstatusrefresh        Refreshes the status window by running `hg status`
+                        again.
+                        Mapped to <C-R>.
+
+                                                *lawrencium-status-mappings*
+A few other mappings are available in the status window:
+
+   <C-N>                Jump to the next filename.
+   <C-P>                Jump to the previous filename.
+   q                    Quit the status window.
+
+
+ vim:tw=78:et:ft=help:norl:
