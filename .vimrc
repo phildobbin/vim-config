@@ -7,7 +7,7 @@
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp' : 'vim/'}
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -38,8 +38,6 @@ let g:script_runner_ruby = '/Users/dobbin/.rvm/rubies/ruby-1.8.7-p352/bin/ruby'
 let g:script_runner_perl = '/Users/dobbin/perl5/perlbrew/perls/perl-5.14.2/bin/perl'
 let g:ctags_path='/opt/local/bin/ctags'
 let g:ctags_statusline=1
-let g:SimplenoteUsername = "phildobbin@gmail.com"
-let g:SimplenotePassword = "orwell"
 
 "autocmd! ColorScheme * source~/.vim/plugin/statusline.vim
 
@@ -78,7 +76,6 @@ nnoremap <leader>a :Ack
 " Toggle spell checking
 nmap <silent> <leader>s :set spell!<CR>
 
-let twitvim_login="phildobbin@gmail.com:orwell"
 
 compiler ruby
 
