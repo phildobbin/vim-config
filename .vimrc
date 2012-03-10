@@ -21,7 +21,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 "let g:colors_name = "color_sample_pack.vim"
-:version 7.3
+:version 7.3.410
 :set number
 :set showmode
 :map q :q<CR>
