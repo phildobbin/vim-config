@@ -109,6 +109,9 @@
 :Hgvdiff_f	lawrencium.txt	/*:Hgvdiff_f*
 :LAck	ack.txt	/*:LAck*
 :LAckAdd	ack.txt	/*:LAckAdd*
+:LP	LogiPat.txt	/*:LP*
+:LPF	LogiPat.txt	/*:LPF*
+:LogiPat	LogiPat.txt	/*:LogiPat*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
 :NERDTreeFind	NERD_tree.txt	/*:NERDTreeFind*
@@ -154,6 +157,8 @@ GotoSourceInteractive	clojure.txt	/*GotoSourceInteractive*
 GotoSourceWord	clojure.txt	/*GotoSourceWord*
 JavadocLookupInteractive	clojure.txt	/*JavadocLookupInteractive*
 JavadocLookupWord	clojure.txt	/*JavadocLookupWord*
+LogiPat()	LogiPat.txt	/*LogiPat()*
+LogiPat-flags	LogiPat.txt	/*LogiPat-flags*
 MacroExpand	clojure.txt	/*MacroExpand*
 MacroExpand1	clojure.txt	/*MacroExpand1*
 MetaLookupInteractive	clojure.txt	/*MetaLookupInteractive*
@@ -689,6 +694,18 @@ lawrencium-status-window	lawrencium.txt	/*lawrencium-status-window*
 lawrencium.txt	lawrencium.txt	/*lawrencium.txt*
 li	clojure.txt	/*li*
 list-snippets	snipMate.txt	/*list-snippets*
+logipat	LogiPat.txt	/*logipat*
+logipat-arg	LogiPat.txt	/*logipat-arg*
+logipat-caveat	LogiPat.txt	/*logipat-caveat*
+logipat-copyright	LogiPat.txt	/*logipat-copyright*
+logipat-examples	LogiPat.txt	/*logipat-examples*
+logipat-history	LogiPat.txt	/*logipat-history*
+logipat-input	LogiPat.txt	/*logipat-input*
+logipat-man	LogiPat.txt	/*logipat-man*
+logipat-manual	LogiPat.txt	/*logipat-manual*
+logipat-operators	LogiPat.txt	/*logipat-operators*
+logipat-pattern	LogiPat.txt	/*logipat-pattern*
+logipat.txt	LogiPat.txt	/*logipat.txt*
 lw	clojure.txt	/*lw*
 m1	clojure.txt	/*m1*
 me	clojure.txt	/*me*
