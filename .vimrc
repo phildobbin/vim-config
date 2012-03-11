@@ -7,7 +7,7 @@
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rails.vim'
 Bundle 'rstacruz/sparkup', {'rtp' : 'vim/'}
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -21,7 +21,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 "let g:colors_name = "color_sample_pack.vim"
-:version 7.3
+:version 7.3.410
 :set number
 :set showmode
 :map q :q<CR>
@@ -75,6 +75,7 @@ nnoremap <leader>a :Ack
 
 " Toggle spell checking
 nmap <silent> <leader>s :set spell!<CR>
+
 
 
 compiler ruby
@@ -152,7 +153,7 @@ iab Fone Phone
 " Quick write
 nmap <leader>w :w<CR>
 
-
+" enable menus in console
 :source $VIMRUNTIME/menu.vim
 :set wildmenu
 :set cpo-=<
@@ -182,9 +183,9 @@ nnoremap <silent> sN :FufMruFileInCwd<CR>
 " node.js make & error in QuickFix
 nmap <Leader><Leader> :w<CR>:make! \| botright cwindow<CR>
 
-
-
-
+" once bitten, twice shy...
+set backup " backup on
+set backupdir=~/.backup
 
 
 
