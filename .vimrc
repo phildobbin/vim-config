@@ -7,7 +7,6 @@
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'rails.vim'
 Bundle 'rstacruz/sparkup', {'rtp' : 'vim/'}
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -22,7 +21,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 "let g:colors_name = "color_sample_pack.vim"
-:version 7.3.410
+:version 7.3.462
 :set number
 :set showmode
 :map q :q<CR>
