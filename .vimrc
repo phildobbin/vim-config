@@ -11,6 +11,7 @@ Bundle 'rails.vim'
 Bundle 'rstacruz/sparkup', {'rtp' : 'vim/'}
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 :set vb
 :set hlsearch
 ":set showmatch
@@ -75,7 +76,6 @@ nnoremap <leader>a :Ack
 
 " Toggle spell checking
 nmap <silent> <leader>s :set spell!<CR>
-
 
 
 compiler ruby
@@ -187,9 +187,9 @@ nmap <Leader><Leader> :w<CR>:make! \| botright cwindow<CR>
 set backup " backup on
 set backupdir=~/.backup
 
+source $VIMRUNTIME/ftplugin/man.vim
 
-
-
+autocmd Filetype tex source ~/.vim/auctex.vim
 
 
 
