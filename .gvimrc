@@ -105,7 +105,7 @@ endif " exists("macvim_hig_shift_movement")
 let &cpo = s:cpo_save
 unlet s:cpo_save
 
-"set transparency=10
+set transparency=10
 
 set gfn=Monaco:h13
 

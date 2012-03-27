@@ -27,6 +27,15 @@ colorscheme solarized
 :map q :q<CR>
 :set path=$HOME/usr/local/bin,/opt/local/bin,/usr/bin,.
 :set ignorecase
+:set smartcase
+:set foldenable
+:set foldmethod=marker " Fold on the marker
+:set foldlevel=100 " Don't auto-fold anything (but I can still fold manually)
+:set foldopen=mark,percent,tag " what movements open folds
+
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
+au BufRead,BufNewFile {*.md,*.mkd,.markdown} set ft=markdown
+au BufRead,BufNewFile {COMMIT_EDITMSG} set ft=gitcommit
 call pathogen#infect('~/.vim/bundle')
 call pathogen#helptags()
 autocmd BufReadPost *
@@ -189,6 +198,27 @@ set backupdir=~/.backup
 source $VIMRUNTIME/ftplugin/man.vim
 
 autocmd Filetype tex source ~/.vim/auctex.vim
+
+" after/plugin/my_tabular_commands.vim
+" Provide extra :Tabular commands
+
+if !exists(':Tabularize')
+				finish "Give up here; the Tabular plugin mustn't have been loaded
+endif
+
+" Make line wrapping possible by resetting the 'cpo' option, first saving it
+let s:save_cpo = &cpo
+set cpo&vim
+
+AddTabularPattern! asterix /*/11
+
+AddTabularPipeline! remove_leading_spaces /^ /
+				\ map(a:lines, "substitute(v:val, '^ *', '')")
+
+" Restore the saved value of 'cpo'
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
 
 
 
