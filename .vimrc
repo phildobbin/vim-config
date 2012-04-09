@@ -33,7 +33,7 @@ colorscheme solarized
 :set foldlevel=100 " Don't auto-fold anything (but I can still fold manually)
 :set foldopen=mark,percent,tag " what movements open folds
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,*.rdoc} set ft=ruby
 au BufRead,BufNewFile {*.md,*.mkd,.markdown} set ft=markdown
 au BufRead,BufNewFile {COMMIT_EDITMSG} set ft=gitcommit
 call pathogen#infect('~/.vim/bundle')
@@ -43,7 +43,7 @@ autocmd BufReadPost *
 	\    exe "normal g`\"" |
 	\ endif
 
-let g:script_runner_ruby = '/Users/dobbin/.rvm/rubies/ruby-1.8.7-p352/bin/ruby'
+let g:script_runner_ruby = '/Users/dobbin/.rvm/rubies/ruby-1.9.3-p125/bin/ruby'
 let g:script_runner_perl = '/Users/dobbin/perl5/perlbrew/perls/perl-5.14.2/bin/perl'
 let g:ctags_path='/opt/local/bin/ctags'
 let g:ctags_statusline=1
@@ -218,6 +218,21 @@ AddTabularPipeline! remove_leading_spaces /^ /
 " Restore the saved value of 'cpo'
 let &cpo = s:save_cpo
 unlet s:save_cpo
+
+" Halt search at EOF
+:set nowrapscan
+
+" Gitv mappings
+nmap <leader>gv :Gitv --all<cr>
+nmap <leader>gV :Gitv! --all<cr>
+vmap <leader>gV :Gitv! --all<cr>
+cabbrev gitv Gitv
+
+" Tagbar mappings
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
+" vertical YankRing window
+let g:yankring_window_use_horiz = 0
 
 
 
